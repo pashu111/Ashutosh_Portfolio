@@ -1,3 +1,32 @@
+import carRental from "../assets/Car_rental.png";
+import foodCover from "../assets/food_cover.png";
+import jobPortal from "../assets/job_portal.png";
+import drowsiness from "../assets/drowsiness.png";
+
+
+const projects = [
+  {
+    title: "Car Rental Web Application",
+    desc: "MERN stack app with authentication, booking system, admin & customer panels.",
+    image: carRental,
+  },
+  {
+    title: "Online Food Ordering System",
+    desc: "Full-stack MERN app with cart, orders, authentication, and real-time tracking.",
+    image: foodCover,
+  },
+  {
+    title: "Job Portal Application",
+    desc: "React, Node, MySQL app with JWT auth and role-based dashboards.",
+    image: jobPortal,
+  },
+  {
+    title: "Drowsiness Detection System",
+    desc: "Python, OpenCV, Dlib based real-time driver drowsiness detection system.",
+    image: drowsiness,
+  },
+];
+
 export default function Projects() {
   return (
     <section
