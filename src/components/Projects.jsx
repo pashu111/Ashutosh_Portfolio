@@ -2,22 +2,22 @@ const projects = [
   {
     title: "Car Rental Web Application",
     desc: "MERN stack app with authentication, booking system, admin & customer panels.",
-    image: "../src/assets/Car_rental.png", // Replace with actual image path
+    image: "/Car_rental.png", // Replace with actual image path
   },
   {
     title: "Online Food Ordering System",
     desc: "Full-stack MERN app with cart, orders, authentication, and real-time tracking.",
-    image: "../src/assets/food_cover.png",
+    image: "/food_cover.png",
   },
   {
     title: "Job Portal Application",
     desc: "React, Node, MySQL app with JWT auth and role-based dashboards.",
-    image: "../src/assets/job_portal.png",
+    image: "/Job_portal.png",
   },
   {
     title: "Drowsiness Detection System",
     desc: "Python, OpenCV, Dlib based real-time driver drowsiness detection system.",
-    image: "../src/assets/drowsiness.png",
+    image: "/Drowsiness.png",
   },
 ];
 
