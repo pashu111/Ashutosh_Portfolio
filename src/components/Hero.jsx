@@ -17,7 +17,7 @@ export default function Hero() {
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "Ashutosh_Pradhan_Resume.pdf";
+      a.download = "Ashutosh Pradhan_Resume.pdf";
       document.body.appendChild(a);
       a.click();
       a.remove();
