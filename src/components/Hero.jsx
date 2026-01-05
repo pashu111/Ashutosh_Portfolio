@@ -8,6 +8,25 @@ export default function Hero() {
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // ✅ FORCE DOWNLOAD (Desktop + Mobile)
+  const downloadResume = async () => {
+    try {
+      const response = await fetch("/Ashutosh_Pradhan_Resume.pdf");
+      const blob = await response.blob();
+
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Ashutosh_Pradhan_Resume.pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      alert("Failed to download resume. Please try again.");
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4">
       <motion.div
@@ -20,7 +39,6 @@ export default function Hero() {
           Hi, I'm <span className="text-blue-500">Ashutosh Pradhan</span>
         </h1>
 
-        {/* Typing Animation */}
         <p className="mt-4 text-base sm:text-lg text-gray-500">
           <span className="text-blue-500 font-semibold">
             <Typewriter
@@ -35,7 +53,6 @@ export default function Hero() {
           </span>
         </p>
 
-        {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,20 +71,18 @@ export default function Hero() {
             Hire Me
           </motion.button>
 
-          {/* ✅ FIXED RESUME LINK */}
-          <motion.a
-            href="/Ashutosh_Pradhan_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* ✅ REAL DOWNLOAD BUTTON */}
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={downloadResume}
             className="
               px-6 py-3 border border-blue-500 text-blue-500 font-semibold rounded-lg
               hover:bg-blue-500 hover:text-white transition
             "
           >
             Download Resume
-          </motion.a>
+          </motion.button>
         </motion.div>
       </motion.div>
     </section>
