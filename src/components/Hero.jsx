@@ -42,7 +42,7 @@ export default function Hero() {
         <p className="mt-4 text-base sm:text-lg text-gray-500">
           <span className="text-blue-500 font-semibold">
             <Typewriter
-              words={["Full Stack Developer", "Freelancer"]}
+              words={["Full Stack Developer", "Software Developer", "Tech Enthusiast"]}
               loop
               cursor
               cursorStyle="|"

@@ -12,9 +12,14 @@ export default function Navbar() {
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false); // close menu on mobile click
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      // Delay closing so scroll isn’t interrupted
+      setTimeout(() => setOpen(false), 300);
+    }
   };
+
+  const menuItems = ["about", "skills", "projects", "contact"];
 
   return (
     <motion.nav
@@ -32,7 +37,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          {["about", "skills", "projects", "contact"].map((item) => (
+          {menuItems.map((item) => (
             <motion.button
               key={item}
               onClick={() => handleScroll(item)}
@@ -75,23 +80,29 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             className="md:hidden bg-gray-900 px-6 pb-4"
           >
-            {["about", "skills", "projects", "contact"].map((item) => (
-              <button
+            {menuItems.map((item) => (
+              <motion.button
                 key={item}
                 onClick={() => handleScroll(item)}
+                variants={navItem}
+                whileHover="hover"
+                whileTap="tap"
                 className="block w-full text-left py-3 text-white hover:text-blue-400"
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
-              </button>
+              </motion.button>
             ))}
 
-            <a
+            <motion.a
               href="/resume.pdf"
               download
+              variants={navItem}
+              whileHover="hover"
+              whileTap="tap"
               className="block mt-3 text-center bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
             >
               Download Resume
-            </a>
+            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
