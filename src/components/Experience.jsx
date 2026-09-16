@@ -4,14 +4,6 @@ import { Briefcase, MapPin, CalendarDays } from "lucide-react";
 export default function Experience() {
   const experiences = [
     {
-      company: "SakRobotics Lab Pvt. Ltd.",
-      role: "Software Engineer Intern",
-      duration: "Oct 2025 - Mar 2026",
-      location: "Bhubaneswar, Odisha, India",
-      logo: "S",
-      color: "from-cyan-500 to-blue-500",
-    },
-    {
       company: "Striving Squad Pvt Ltd",
       role: "Intern Trainee",
       duration: "Jun 2024 - Jul 2024",

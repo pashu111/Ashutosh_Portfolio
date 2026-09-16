@@ -7,11 +7,6 @@ const stats = [
   { icon: <FaAward />, value: "5", label: "Certifications" },
 ];
 
-const techHighlights = [
-  "Full Stack","React.js", "Node.js",
-  "MongoDB", "Tailwind CSS", "Git", "System Design",
-];
-
 export default function About() {
   return (
     <section id="about" className="relative overflow-hidden bg-slate-950 py-20 sm:py-28 scroll-mt-24">
@@ -53,22 +48,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Tech highlights */}
-            <div className="mt-8">
-              <p className="mb-4 text-sm font-semibold text-slate-400">
-                Technologies I work with:
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {techHighlights.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-medium text-cyan-200 transition hover:bg-cyan-300/20"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
           </motion.div>
 
           {/* Right: Stats grid */}
