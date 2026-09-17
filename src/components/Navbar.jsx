@@ -119,8 +119,8 @@ export default function Navbar() {
 
             {/* Resume button */}
             <motion.a
-              href="/Ashutosh Pradhan-Resume.pdf"
-              download="Ashutosh Pradhan - Resume.pdf"
+              href="/Ashutosh_Pradhan_Resume.pdf"
+              download="Ashutosh_Pradhan_Resume.pdf"
               variants={navItem}
               whileHover="hover"
               whileTap="tap"
@@ -154,8 +154,8 @@ export default function Navbar() {
                 </button>
               ))}
               <a
-                href="/Ashutosh%20Pradhan%20-%20Resume.pdf"
-                download="Ashutosh Pradhan - Resume.pdf"
+                href="/Ashutosh_Pradhan_Resume.pdf"
+                download="Ashutosh_Pradhan_Resume.pdf"
                 className="mt-1 rounded-lg bg-gradient-to-r from-cyan-300 to-blue-400 px-3 py-2.5 text-center text-sm font-semibold text-slate-900 transition hover:from-cyan-200 hover:to-blue-300"
               >
                 Download Resume

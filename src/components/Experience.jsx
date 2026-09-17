@@ -1,15 +1,37 @@
 ﻿import { motion } from "framer-motion";
 import { Briefcase, MapPin, CalendarDays } from "lucide-react";
+import syrAnexoomLogo from "../assets/SyrAnexoom.png";
+import strivingSquadLogo from "../assets/StrivingSquad.png";
+import sdiLogo from "../assets/SDI.png";
 
 export default function Experience() {
   const experiences = [
+    {
+      company: "SyrAnexoom Software Pvt. Ltd.",
+      role: "Software Engineer Intern",
+      duration: "Oct 2025 - Present",
+      location: "Bhubaneswar, Odisha",
+      logo: "S",
+      logoImage: syrAnexoomLogo,
+      color: "from-cyan-500 to-blue-500",
+      highlights: [
+        "Developed and maintained responsive full-stack web applications projects.",
+        "Implemented authentication, form validation, API integration, and application functionality based on project requirements.",
+        "Collaborated with team members using Git/GitHub and Agile development practices throughout the software development lifecycle.",
+      ],
+    },
     {
       company: "Striving Squad Pvt Ltd",
       role: "Intern Trainee",
       duration: "Jun 2024 - Jul 2024",
       location: "Bhubaneswar, Odisha, India",
       logo: "S",
+      logoImage: strivingSquadLogo,
       color: "from-purple-500 to-pink-500",
+      highlights: [
+        "Worked on a car rental application using React.js and Tailwind CSS, implementing dynamic car listings, interactive booking forms, and an intuitive UI.",
+        "Collaborated with senior mentors to debug, optimize, and improve application performance.",
+      ],
     },
     {
       company: "SDI Bhubaneswar",
@@ -17,7 +39,14 @@ export default function Experience() {
       duration: "Jul 2023 - Aug 2023",
       location: "Bhubaneswar, Odisha, India",
       logo: "S",
+      logoImage: sdiLogo,
       color: "from-amber-500 to-orange-500",
+      highlights: [
+        "Worked on Smart Home Automation System using RuggedBoard for automated appliance control and monitoring.",
+        "Integrated PIR, LDR, and temperature sensors with RuggedBoard to detect motion, light intensity, and temperature conditions.",
+        "Controlled home appliances using relay modules based on sensor inputs and predefined automation conditions.",
+        "Gained hands-on experience in RuggedBoard, sensor interfacing, embedded systems, and hardware-software integration.",
+      ],
     },
   ];
 
@@ -110,7 +139,15 @@ export default function Experience() {
                       <div
                         className={`h-14 w-14 rounded-2xl bg-gradient-to-r ${item.color} flex items-center justify-center text-white text-xl font-bold shadow-lg transition-transform duration-300 group-hover:scale-105`}
                       >
-                        {item.logo}
+                        {item.logoImage ? (
+                          <img
+                            src={item.logoImage}
+                            alt={`${item.company} logo`}
+                            className="h-full w-full rounded-2xl object-cover"
+                          />
+                        ) : (
+                          item.logo
+                        )}
                       </div>
 
                       <div>
@@ -140,11 +177,19 @@ export default function Experience() {
                   <div className="mt-6 h-[1px] w-full bg-gradient-to-r from-cyan-500/40 via-blue-500/20 to-transparent" />
 
                   {/* Description */}
-                  <p className="mt-5 text-slate-300 leading-relaxed">
-                    Worked on modern web technologies, collaborated with teams,
-                    and contributed to building responsive and scalable
-                    applications with clean UI/UX experiences.
-                  </p>
+                  {item.highlights?.length > 0 ? (
+                    <ul className="mt-5 space-y-3 pl-5 text-slate-300 leading-relaxed list-disc">
+                      {item.highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-5 text-slate-300 leading-relaxed">
+                      Worked on modern web technologies, collaborated with teams,
+                      and contributed to building responsive and scalable
+                      applications with clean UI/UX experiences.
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}
