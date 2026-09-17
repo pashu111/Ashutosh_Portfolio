@@ -3,6 +3,7 @@ import { FaGithub, FaArrowRight, FaArrowUpRightFromSquare } from "react-icons/fa
 import drowsinessImage from "../assets/Drowsiness.png";
 import memorycard from "../assets/MemoryCard.png";
 import shopnestImage from "../assets/Shopnest.png";
+import smartNotesImage from "../assets/SmartNotes.svg";
 
 const projects = [
 
@@ -45,6 +46,19 @@ const projects = [
     tags: ["Full Stack", "E-Commerce"],
     github: "https://github.com/pashu111",
     live: "https://shopnest-gold.vercel.app/"
+  },
+
+  {
+    title: "Smart Notes Generator",
+    desc: "A responsive single-page application for creating and organizing smart notes with a modular interface and streamlined user experience.",
+    tech: ["React.js", "Tailwind CSS", "Firebase", "Groq API", "Node.js", "Express.js", "MongoDB"],
+    highlights: [
+      "Developed a responsive single-page web application using React.js with modular, reusable UI components and state management.",
+      "Built interactive car listing, search, and filtering functionality to streamline user navigation and rental booking.",
+    ],
+    image: smartNotesImage,
+    tags: ["Full Stack", "AI Application"],
+    github: "https://github.com/pashu111",
   },
 
 ];
